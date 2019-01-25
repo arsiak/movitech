@@ -3,31 +3,87 @@
         <meta charset="utf-8">
         <title>Movitech</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Add icon library -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
     <body>
         <div class="grid">
         <header class="header">
-            <div>
-                <button></button>
-                <input type="text" placeholder="Movie name..." class="search-movie">
-            </div>
+                <h1 class="main-title">Movitech</h1>
+                <div class="search-container">
+                        <form action="#">
+                          <input type="text" placeholder="Entrez un film.." name="search">
+                          <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                </div>
         </header>
 
         <nav class="left-nav">
             <ul class="genre">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
+                <li><a href="#">Comédie</a></li>
+                <li><a href="#">Horreur</a></li>
+                <li><a href="#">Drame</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">SF</a></li>
             </ul>
         </nav>
 
 
         <main class="container">
-            <section class="scroll-pics">
-
+             <!-- Contient le slider et la navigation du slider -->
+            <section class="gallery">
+                <h2>Photo Slider</h2>
+                <!-- Slider -->
+                <div class="scroll-pics">
+                    <ul class="listImg">
+                    <li class="elementImg">
+                    <figure>
+                     <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>
+                  </figure>  
+                  </li>
+                  <li class="elementImg">
+                        <figure>
+                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/>
+                        </figure>
+                        
+                        </li>
+                  <li class="elementImg">
+                    <figure>
+                        <img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" class="slides" alt=""/>   
+                    </figure>                   
+                    </li>
+                    <li class="elementImg"><figure>
+                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>        
+                         </figure>
+                         </li>
+                    <li class="elementImg">
+                    <figure>
+                        <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/> 
+                    </figure>                 
+                    </li>
+                    <li class="elementImg">
+                    <figure>
+                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/>     
+                        </figure>
+                    </li>
+                    <li class="elementImg"><figure>
+                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>       
+                         </figure>                 
+                         </li>
+                    </ul>
+                </div>
+                  <!-- Navigation Button Controls -->
+			    <div class="slider-nav">
+                        <button class="arrows prev btn" data-dir="prev">
+                        
+                                <i class="prevArr fas fa-arrow-alt-circle-left"></i></button>
+                        <button class="arrows next btn" data-dir="next">
+                             
+                                <i class="nextArr fas fa-arrow-alt-circle-right"></i></button>
+                     </div>
             </section>
+
+            <!--Description du film-->
             <section class="movie">
 
             </section>
@@ -41,6 +97,6 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-        <script type="text/js" src="main.js"></script>
+        <script src="main.js"></script>
     </body>
 </html>
