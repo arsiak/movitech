@@ -11,10 +11,10 @@
         <header class="header">
                 <h1 class="main-title">Movitech</h1>
                 <div class="search-container">
-                        <form action="#">
-                          <input type="text" placeholder="Entrez un film.." name="search">
-                          <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                        <form class="example" action="">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
                 </div>
         </header>
 
@@ -31,61 +31,57 @@
 
         <main class="container">
              <!-- Contient le slider et la navigation du slider -->
-            <section class="gallery">
-                <h2>Photo Slider</h2>
-                <!-- Slider -->
-                <div class="scroll-pics">
-                    <ul class="listImg">
-                    <li class="elementImg">
-                    <figure>
-                     <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>
-                  </figure>  
-                  </li>
-                  <li class="elementImg">
-                        <figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/>
-                        </figure>
-                        
-                        </li>
-                  <li class="elementImg">
-                    <figure>
-                        <img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" class="slides" alt=""/>   
-                    </figure>                   
-                    </li>
-                    <li class="elementImg"><figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>        
-                         </figure>
-                         </li>
-                    <li class="elementImg">
-                    <figure>
-                        <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/> 
-                    </figure>                 
-                    </li>
-                    <li class="elementImg">
-                    <figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/>     
-                        </figure>
-                    </li>
-                    <li class="elementImg"><figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>       
-                         </figure>                 
-                         </li>
+             <div class="slider">
+                    <ul class="liste_img is-set">
+                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" alt=""></a></li>
+                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" alt=""></a></li>
+                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" alt=""></a></li>
+                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" alt=""></a></li>
+                        <li class="img is-ref"><a href=""><img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" alt=""></a></li>
                     </ul>
-                </div>
-                  <!-- Navigation Button Controls -->
-			    <div class="slider-nav">
-                        <button class="arrows prev btn" data-dir="prev">
-                        
-                                <i class="prevArr fas fa-arrow-alt-circle-left"></i></button>
-                        <button class="arrows next btn" data-dir="next">
-                             
-                                <i class="nextArr fas fa-arrow-alt-circle-right"></i></button>
-                     </div>
+                    <div class='controls'>
+                            <button class="toggle" data-toggle='prev'>
+                                    <i class="fas fa-chevron-left"></i></button>
+                                    <button class="toggle" data-toggle='next'>
+                                            <i class="fas fa-chevron-right"></i></button>
+                          </div>
+                    </div>
+            
             </section>
 
             <!--Description du film-->
             <section class="movie">
+                <div>
+                    <p>Nom du film: </p>
+                    <p>Description: </p>
+                    <ul>
+                        Genres:
+                        <li></li>
+                    </ul>
+                    <p>Date de sortie:</p>
+                    <ul>
+                        Acteurs:
+                        <li></li>
+                    </ul>
+                    <ul>
+                            Réalisateurs:
+                            <li></li>
+                        </ul>
+                    <p>Note métacritic: </p>
+                    <p>
+                        <img src="" alt="poster">
+                    </p>
+                    <ul>
+                        Liste des photos:
+                        <li>
 
+                        </li>
+                        <li>
+
+                        </li>
+                        <li></li>
+                    </ul>
+                </div>
             </section>
         </main>
 

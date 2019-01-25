@@ -1,4 +1,3 @@
-
 var $carousel = $('.liste_img');
 var $seats = $('.img');
 

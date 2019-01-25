@@ -60,85 +60,125 @@ li{
 
 
   /* Carroussel */
+  .slider {
+    background-color:blue;
+    width: 80%;
+    overflow:hidden;
+    margin: 0 auto;
 
-  .gallery
-  {
-      margin:10px auto;
-      background:#999;
-      border:1px solid orange;
-  }
-  
-  .scroll-pics
-  {
-    width:inherit;
-	height:400px;
-	overflow:scroll;
-  }
-  .scroll-pics ul
-  {
-      list-style:none;
-      margin-left:0px;
-  }
+}
 
-  .elementImg {
-      width: 400px;
-      height: 400px;
-      display: inline-block;
-  }
-  
-  .dividers
-  {
-      margin:0 15px 0 15px; /* This is Important and margin must be same on both sides */
-  }
-  
-  #slider-nav
-  {
-      margin-top: -4em;
-      cursor:pointer;	
-  }
-
-  .listImg {
-    display: block;
-    height: 100%;
-    margin-left: 0;
-  }
-
-  .box {
-      margin: auto;
-      width: 80%;
-  }
-
-  .listImg img {
-    max-width: 100%;
+img {
     height: auto;
+    max-width: 100%;
+}
+
+
+.liste_img {
+    display: flex;
+    justify-content: space-between;
+    left: -100%;
+    list-style: none;
+    margin: 0 ;
+    padding: 0;
+    position: relative;
+    transform: translateX(100%);
   }
 
-  /* ARROW STYLES SLIDER */
 
-  .btn {
-    background-color:transparent; /* Blue background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 12px 16px; /* Some padding */
-    font-size: 16px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-  }
-
-  .nextArr, .prevArr {
-    font-size: 200px;
+  @media (min-width: 30em) {
+    .liste_img {
+      left: -50%;
+      transform: translateX(50%);
+    }
   }
   
-  /* Darker background on mouse-over */
-  .btn:hover {
-    background-color: RoyalBlue;
+  @media (min-width: 40em) {
+    .liste_img {
+      left: -33.33333%;
+      transform: translateX(33.33333%);
+    }
+  }
+  
+  .liste_img.is-reversing {
+    transform: translateX(-100%);
+  }
+  
+  @media (min-width: 30em) {
+    .liste_img.is-reversing {
+      transform: translateX(-50%);
+    }
+  }
+  
+  @media (min-width: 40em) {
+    .liste_img.is-reversing {
+      transform: translateX(-33.33333%);
+    }
+  }
+  
+  .liste_img.is-set {
+    transform: none;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .img {
+    background: #ddd;
+    flex: 1 0 100%;
+    order: 2;
+  }
+  
+  .img:nth-child(even) {
+    background: #d5d5d5;
+  }
+  
+  @media (min-width: 30em) {
+    .img {
+      flex-basis: 50%;
+    }
+  }
+  
+  @media (min-width: 40em) {
+    .img {
+      flex-basis: 33.333%;
+      padding-right: 1%;
+    }
+  }
+  
+  .img.is-ref {
+    order: 1;
   }
 
-  .prev {
-      float: left;
+  img {
+    -webkit-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
+box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
   }
-
-  .next {
-      float:right;
+  
+  h2 {
+    color: #aaa;
+    font-size: 7em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.6em 0;
+    text-align: center;
+  }
+  
+  .controls {
+    padding: 1em;
+    text-align: center;
+  }
+  
+  .controls button {
+    background: #aaa;
+    border: 0;
+    border-radius: 0.25em;
+    color: #eee;
+    padding: 0.5em 1em;
+  }
+  
+  .controls button:hover,
+  .controls button:focus {
+    background: orange;
   }
 
 
@@ -186,6 +226,45 @@ li{
     grid-column: 1/6;
     text-align: center;
 }
+
+/* */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  form.example button:hover {
+    background: #0b7dda;
+  }
+  
+  /* Clear floats */
+  form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
    
     
     
