@@ -1,0 +1,26 @@
+body {
+    background-color: red;
+}
+
+/* Layout global mise en page avec css grid*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 2 colonnes de même taille */
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.header{
+    grid-column: 1/6;
+    background-color: yellow;
+}
+
+.left-nav {
+    grid-column: 1/2;
+    background-color: blue;
+}
+
+.container {
+    grid-column: 2/6;
+    background-color: brown;
+}
+
