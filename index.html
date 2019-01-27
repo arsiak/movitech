@@ -11,8 +11,8 @@
         <header class="header">
                 <h1 class="main-title">Movitech</h1>
                 <div class="search-container">
-                        <form class="example" action="">
-                                <input type="text" placeholder="Search.." name="search">
+                        <form id="searchMovieForm" action="">
+                                <input id="searchMovie" type="text" placeholder="Search a movie .." name="search">
                                 <button type="submit"><i class="fa fa-search"></i></button>
                               </form>
                 </div>
@@ -20,67 +20,41 @@
 
         <nav class="left-nav">
             <ul class="genre">
-                <li><a href="#">Comédie</a></li>
-                <li><a href="#">Horreur</a></li>
-                <li><a href="#">Drame</a></li>
-                <li><a href="#">Action</a></li>
-                <li><a href="#">SF</a></li>
+              
             </ul>
         </nav>
 
 
         <main class="container">
-             <!-- Contient le slider et la navigation du slider -->
-             <div class="slider">
-                    <ul class="liste_img is-set">
-                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" alt=""></a></li>
-                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" alt=""></a></li>
-                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" alt=""></a></li>
-                        <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" alt=""></a></li>
-                        <li class="img is-ref"><a href=""><img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" alt=""></a></li>
+             <!-- List similar movies -->
+             <section class="similarMovies">
+                    <ul class="list_img">
+                            <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" alt=""></a></li>
                     </ul>
-                    <div class='controls'>
-                            <button class="toggle" data-toggle='prev'>
-                                    <i class="fas fa-chevron-left"></i></button>
-                                    <button class="toggle" data-toggle='next'>
-                                            <i class="fas fa-chevron-right"></i></button>
-                          </div>
-                    </div>
-            
             </section>
 
             <!--Description du film-->
             <section class="movie">
                 <div>
-                    <p>Nom du film: </p>
-                    <p>Description: </p>
-                    <ul>
+                    <p><span id="moviePoster"><img src="" alt=""></span></p>
+                    <p>Nom du film:<span id="movieName"></span></p>
+                    <p>Description: <span id="movieDescr"></span> </p>
+                    <p>Budget: <span id="movieBudget"></span> $ </p>
+                    <ul id="movieGenre">
                         Genres:
-                        <li></li>
                     </ul>
-                    <p>Date de sortie:</p>
-                    <ul>
+                    <p>Date de sortie: <span id="movieReleaseDate"></span></p>
+                    <ul id="movieActors">
                         Acteurs:
                         <li></li>
                     </ul>
-                    <ul>
+                    <ul id="movieDirectors">
                             Réalisateurs:
                             <li></li>
                         </ul>
-                    <p>Note métacritic: </p>
-                    <p>
-                        <img src="" alt="poster">
-                    </p>
-                    <ul>
-                        Liste des photos:
-                        <li>
-
-                        </li>
-                        <li>
-
-                        </li>
-                        <li></li>
-                    </ul>
+                    <p>Note : <span id="movieRating"></span>/10 </p>
+                    <div id="imgMovieSlides">
+                    </div>
                 </div>
             </section>
         </main>

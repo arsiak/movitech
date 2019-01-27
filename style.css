@@ -1,21 +1,23 @@
 body {
-    background-color: red;
+    background-color:white;
 }
 
 /* Layout global mise en page avec css grid*/
 .grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 colonnes de même taille */
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-gap: 5px;
 }
 
 .header{
     grid-column: 1/6;
     grid-template-rows: repeat(10, 1fr);
-    height: 200px;
+    height: 100px;
     display: grid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     grid-template-columns: repeat(5, 1fr); /* 5 colonnes de même taille */
-    background-color: yellow;
+    background-color: #B93A32;
 }
 
 .left-nav {
@@ -39,33 +41,62 @@ ul {
 li{
     list-style-type: none;
 }
- 
-  .genre li a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .genre li a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .genre li a.active {
-    background-color: #4CAF50; /* Add a green color to the "active/current" link */
-    color: white;
-  }
 
-
-
-  /* Carroussel */
-  .slider {
-    background-color:blue;
-    width: 80%;
-    overflow:hidden;
-    margin: 0 auto;
-
+.genre {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 100%;
+}
+.genre ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+.genre li {
+   background-color:#729EBF; 
+   background-image:-webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+   background-image: linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #333A40
+}
+.genre li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #444;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+.genre a {
+  display:block;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 0;
+  font-family: verdana;
+  font-size:1.2em
+}
+.genre ul li a, .genre li:hover li a {
+  font-size:1em
+}
+.genre li:hover {
+   background: #729EBF
+}
+.genre li li:hover {
+   background: #999;
+}
+.genre ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+.genre li:hover li {
+  max-height: 15em;
 }
 
 img {
@@ -73,86 +104,6 @@ img {
     max-width: 100%;
 }
 
-
-.liste_img {
-    display: flex;
-    justify-content: space-between;
-    left: -100%;
-    list-style: none;
-    margin: 0 ;
-    padding: 0;
-    position: relative;
-    transform: translateX(100%);
-  }
-
-
-  @media (min-width: 30em) {
-    .liste_img {
-      left: -50%;
-      transform: translateX(50%);
-    }
-  }
-  
-  @media (min-width: 40em) {
-    .liste_img {
-      left: -33.33333%;
-      transform: translateX(33.33333%);
-    }
-  }
-  
-  .liste_img.is-reversing {
-    transform: translateX(-100%);
-  }
-  
-  @media (min-width: 30em) {
-    .liste_img.is-reversing {
-      transform: translateX(-50%);
-    }
-  }
-  
-  @media (min-width: 40em) {
-    .liste_img.is-reversing {
-      transform: translateX(-33.33333%);
-    }
-  }
-  
-  .liste_img.is-set {
-    transform: none;
-    transition: transform 0.5s ease-in-out;
-  }
-  
-  .img {
-    background: #ddd;
-    flex: 1 0 100%;
-    order: 2;
-  }
-  
-  .img:nth-child(even) {
-    background: #d5d5d5;
-  }
-  
-  @media (min-width: 30em) {
-    .img {
-      flex-basis: 50%;
-    }
-  }
-  
-  @media (min-width: 40em) {
-    .img {
-      flex-basis: 33.333%;
-      padding-right: 1%;
-    }
-  }
-  
-  .img.is-ref {
-    order: 1;
-  }
-
-  img {
-    -webkit-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
-  }
   
   h2 {
     color: #aaa;
@@ -181,49 +132,17 @@ box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
     background: orange;
   }
 
-
-/* DESIGN BUTTON SEARCH MOVIE */
-
-
-
-/* search box */
-
-.search-container {
-    grid-column: 3/6;
-    grid-row: 8/11
+  h1
+  {
+    text-shadow: 0px 0px 7px rgba(141, 23, 23, 0.75);
+    color: #080808;
   }
 
-  .topnav {
-    overflow: hidden;
-    background-color: #e9e9e9;
-  }
-  
-  .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
-  }
-  
-  .topnav .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .topnav .search-container button:hover {
-    background: #ccc;
-  }
+
 
 /* HEADER */
 
 .main-title {
-    grid-column: 1/6;
     text-align: center;
 }
 
@@ -233,7 +152,7 @@ box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
   }
   
   /* Style the search field */
-  form.example input[type=text] {
+  #searchMovieForm input[type=text] {
     padding: 10px;
     font-size: 17px;
     border: 1px solid grey;
@@ -243,7 +162,7 @@ box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
   }
   
   /* Style the submit button */
-  form.example button {
+  #searchMovieForm button {
     float: left;
     width: 20%;
     padding: 10px;
@@ -255,16 +174,47 @@ box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.75);
     cursor: pointer;
   }
   
-  form.example button:hover {
+  #searchMovieForm button:hover {
     background: #0b7dda;
+  }
+
+  .search-container {
+    grid-column: 3/6;
+    padding: 20px;
   }
   
   /* Clear floats */
-  form.example::after {
+  #searchMovieForm::after {
     content: "";
     clear: both;
     display: table;
   }
-   
-    
-    
+
+/* SLIDE FOR MOVIE IMAGE */
+#imgMovieSlides { 
+  margin: 50px auto; 
+  position: relative; 
+  width: 500px; 
+  height: 300px; 
+  padding : 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#imgMovieSlides > div { 
+  position: absolute; 
+  top: 5px; 
+  left: 1px; 
+  bottom: 1px;
+  right: 1px;
+
+}
+
+.similarMovies{
+  width: 100%;
+}
+
+.list_img {
+  display: flex;
+  width: 100%;
+}
+
