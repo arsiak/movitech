@@ -11,81 +11,51 @@
         <header class="header">
                 <h1 class="main-title">Movitech</h1>
                 <div class="search-container">
-                        <form action="#">
-                          <input type="text" placeholder="Entrez un film.." name="search">
-                          <button type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                        <form id="searchMovieForm" action="">
+                                <input id="searchMovie" type="text" placeholder="Search a movie .." name="search">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                              </form>
                 </div>
         </header>
 
         <nav class="left-nav">
             <ul class="genre">
-                <li><a href="#">Comédie</a></li>
-                <li><a href="#">Horreur</a></li>
-                <li><a href="#">Drame</a></li>
-                <li><a href="#">Action</a></li>
-                <li><a href="#">SF</a></li>
+              
             </ul>
         </nav>
 
 
         <main class="container">
-             <!-- Contient le slider et la navigation du slider -->
-            <section class="gallery">
-                <h2>Photo Slider</h2>
-                <!-- Slider -->
-                <div class="scroll-pics">
-                    <ul class="listImg">
-                    <li class="elementImg">
-                    <figure>
-                     <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>
-                  </figure>  
-                  </li>
-                  <li class="elementImg">
-                        <figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/>
-                        </figure>
-                        
-                        </li>
-                  <li class="elementImg">
-                    <figure>
-                        <img src="C:\Users\stagiaire\movitech\imgSliderTest\shawn-ang-1320033-unsplash.jpg" class="slides" alt=""/>   
-                    </figure>                   
-                    </li>
-                    <li class="elementImg"><figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>        
-                         </figure>
-                         </li>
-                    <li class="elementImg">
-                    <figure>
-                        <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/> 
-                    </figure>                 
-                    </li>
-                    <li class="elementImg">
-                    <figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\yogesh-pedamkar-1319764-unsplash.jpg" class="slides" alt=""/>     
-                        </figure>
-                    </li>
-                    <li class="elementImg"><figure>
-                            <img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" class="slides" alt=""/>       
-                         </figure>                 
-                         </li>
+             <!-- List similar movies -->
+             <section class="similarMovies">
+                    <ul class="list_img">
+                            <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" alt=""></a></li>
                     </ul>
-                </div>
-                  <!-- Navigation Button Controls -->
-			    <div class="slider-nav">
-                        <button class="arrows prev btn" data-dir="prev">
-                        
-                                <i class="prevArr fas fa-arrow-alt-circle-left"></i></button>
-                        <button class="arrows next btn" data-dir="next">
-                             
-                                <i class="nextArr fas fa-arrow-alt-circle-right"></i></button>
-                     </div>
             </section>
 
             <!--Description du film-->
             <section class="movie">
-
+                <div>
+                    <p><span id="moviePoster"><img src="" alt=""></span></p>
+                    <p>Nom du film:<span id="movieName"></span></p>
+                    <p>Description: <span id="movieDescr"></span> </p>
+                    <p>Budget: <span id="movieBudget"></span> $ </p>
+                    <ul id="movieGenre">
+                        Genres:
+                    </ul>
+                    <p>Date de sortie: <span id="movieReleaseDate"></span></p>
+                    <ul id="movieActors">
+                        Acteurs:
+                        <li></li>
+                    </ul>
+                    <ul id="movieDirectors">
+                            Réalisateurs:
+                            <li></li>
+                        </ul>
+                    <p>Note : <span id="movieRating"></span>/10 </p>
+                    <div id="imgMovieSlides">
+                    </div>
+                </div>
             </section>
         </main>
 

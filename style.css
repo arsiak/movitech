@@ -1,21 +1,23 @@
 body {
-    background-color: red;
+    background-color:white;
 }
 
 /* Layout global mise en page avec css grid*/
 .grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* 5 colonnes de même taille */
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-gap: 5px;
 }
 
 .header{
     grid-column: 1/6;
     grid-template-rows: repeat(10, 1fr);
-    height: 200px;
+    height: 100px;
     display: grid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     grid-template-columns: repeat(5, 1fr); /* 5 colonnes de même taille */
-    background-color: yellow;
+    background-color: #B93A32;
 }
 
 .left-nav {
@@ -39,153 +41,180 @@ ul {
 li{
     list-style-type: none;
 }
- 
-  .genre li a {
-    background-color: #eee; /* Grey background color */
-    color: black; /* Black text color */
-    display: block; /* Make the links appear below each other */
-    padding: 12px; /* Add some padding */
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  .genre li a:hover {
-    background-color: #ccc; /* Dark grey background on mouse-over */
-  }
-  
-  .genre li a.active {
-    background-color: #4CAF50; /* Add a green color to the "active/current" link */
-    color: white;
-  }
 
+.genre {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+  width: 100%;
+}
+.genre ul {
+  padding:0;
+  margin:0;
+  list-style:none;
+  text-align: center;
+}
+.genre li {
+   background-color:#729EBF; 
+   background-image:-webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+   background-image: linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+   border-radius: 6px;
+   margin-bottom:2px;
+   box-shadow: 3px 3px 3px #999;
+   border:solid 1px #333A40
+}
+.genre li li {
+   max-height:0;
+   overflow: hidden;
+   transition: all .5s;
+   border-radius:0;
+   background: #444;
+   box-shadow: none;
+   border:none;
+   margin:0
+}
+.genre a {
+  display:block;
+  text-decoration: none;
+  color: #fff;
+  padding: 8px 0;
+  font-family: verdana;
+  font-size:1.2em
+}
+.genre ul li a, .genre li:hover li a {
+  font-size:1em
+}
+.genre li:hover {
+   background: #729EBF
+}
+.genre li li:hover {
+   background: #999;
+}
+.genre ul li:last-child {
+   border-radius: 0 0 6px 6px;
+   border:none;
+}
+.genre li:hover li {
+  max-height: 15em;
+}
 
-
-  /* Carroussel */
-
-  .gallery
-  {
-      margin:10px auto;
-      background:#999;
-      border:1px solid orange;
-  }
-  
-  .scroll-pics
-  {
-    width:inherit;
-	height:400px;
-	overflow:scroll;
-  }
-  .scroll-pics ul
-  {
-      list-style:none;
-      margin-left:0px;
-  }
-
-  .elementImg {
-      width: 400px;
-      height: 400px;
-      display: inline-block;
-  }
-  
-  .dividers
-  {
-      margin:0 15px 0 15px; /* This is Important and margin must be same on both sides */
-  }
-  
-  #slider-nav
-  {
-      margin-top: -4em;
-      cursor:pointer;	
-  }
-
-  .listImg {
-    display: block;
-    height: 100%;
-    margin-left: 0;
-  }
-
-  .box {
-      margin: auto;
-      width: 80%;
-  }
-
-  .listImg img {
-    max-width: 100%;
+img {
     height: auto;
-  }
+    max-width: 100%;
+}
 
-  /* ARROW STYLES SLIDER */
-
-  .btn {
-    background-color:transparent; /* Blue background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 12px 16px; /* Some padding */
-    font-size: 16px; /* Set a font size */
-    cursor: pointer; /* Mouse pointer on hover */
-  }
-
-  .nextArr, .prevArr {
-    font-size: 200px;
+  
+  h2 {
+    color: #aaa;
+    font-size: 7em;
+    font-weight: normal;
+    margin: 0;
+    padding: 0.6em 0;
+    text-align: center;
   }
   
-  /* Darker background on mouse-over */
-  .btn:hover {
-    background-color: RoyalBlue;
-  }
-
-  .prev {
-      float: left;
-  }
-
-  .next {
-      float:right;
-  }
-
-
-/* DESIGN BUTTON SEARCH MOVIE */
-
-
-
-/* search box */
-
-.search-container {
-    grid-column: 3/6;
-    grid-row: 8/11
-  }
-
-  .topnav {
-    overflow: hidden;
-    background-color: #e9e9e9;
+  .controls {
+    padding: 1em;
+    text-align: center;
   }
   
-  .topnav input[type=text] {
-    padding: 6px;
-    margin-top: 8px;
-    font-size: 17px;
-    border: none;
+  .controls button {
+    background: #aaa;
+    border: 0;
+    border-radius: 0.25em;
+    color: #eee;
+    padding: 0.5em 1em;
   }
   
-  .topnav .search-container button {
-    float: right;
-    padding: 6px 10px;
-    margin-top: 8px;
-    margin-right: 16px;
-    background: #ddd;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
+  .controls button:hover,
+  .controls button:focus {
+    background: orange;
   }
-  
-  .topnav .search-container button:hover {
-    background: #ccc;
+
+  h1
+  {
+    text-shadow: 0px 0px 7px rgba(141, 23, 23, 0.75);
+    color: #080808;
   }
+
+
 
 /* HEADER */
 
 .main-title {
-    grid-column: 1/6;
     text-align: center;
 }
-   
-    
-    
+
+/* */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  #searchMovieForm input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  
+  /* Style the submit button */
+  #searchMovieForm button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+  }
+  
+  #searchMovieForm button:hover {
+    background: #0b7dda;
+  }
+
+  .search-container {
+    grid-column: 3/6;
+    padding: 20px;
+  }
+  
+  /* Clear floats */
+  #searchMovieForm::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+/* SLIDE FOR MOVIE IMAGE */
+#imgMovieSlides { 
+  margin: 50px auto; 
+  position: relative; 
+  width: 500px; 
+  height: 300px; 
+  padding : 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+}
+
+#imgMovieSlides > div { 
+  position: absolute; 
+  top: 5px; 
+  left: 1px; 
+  bottom: 1px;
+  right: 1px;
+
+}
+
+.similarMovies{
+  width: 100%;
+}
+
+.list_img {
+  display: flex;
+  width: 100%;
+}
+
