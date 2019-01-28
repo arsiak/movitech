@@ -26,6 +26,7 @@ function getInfoMovie(id){
     });*/
 
     $("#movieGenre").children().remove(); // We empty genres list 
+    $(".imageMovie").children().remove();
     $('#movieName').text(jd.original_title);
     $("#movieRating").text(jd.vote_average);
     $('#movieDescr').text(jd.overview);
@@ -35,9 +36,9 @@ function getInfoMovie(id){
     $('#movieReleaseDate').text(jd.release_date);
     $('#movieBudget').text(jd.budget);
     var posterPath = jd.poster_path;
-    $("#moviePoster img").attr("src", img_base_url + img_size + posterPath);
+    $(".imageMovie").append("<img src=\""+img_base_url + "original" + posterPath + "\" alt=\"\"></img>");
  });
- $("#imgMovieSlides").children().remove();
+ $(".imagesMovie").children().remove();
  $(".list_img").children().remove();
   insertImagesForAMovie(id);
   insertImagesSimilarMovies(id);
@@ -47,7 +48,7 @@ function getInfoMovie(id){
 function insertImagesSimilarMovies(id){
   $.getJSON(urlStart + movie_details_url + id + "/similar?" + apiKey, function(jd){
     for(let i=0; i<jd.results.length && i<=9; i++){
-      $(".list_img").append("<li class=\"img\"><a href=\"#\"><img src=\"https://image.tmdb.org/t/p/w154/" +jd.results[i].poster_path + "\" alt=\" \"></a></li>");
+      $(".list_img").append("<li class=\"img\"><a href=\"#\"><img idMovie =\""+jd.results[i].id +"\"src=\"https://image.tmdb.org/t/p/w154/" +jd.results[i].poster_path + "\" alt=\" \"></a></li>");
     }
     /*jd.results.forEach(movie => {
       $(".list_img").append("<li class=\"img\"><a href=\"#\"><img src=\"https://image.tmdb.org/t/p/w154/" +movie.poster_path + "\" alt=\" \"></a></li>");
@@ -62,7 +63,7 @@ function insertImagesForAMovie(id){
     dataType: 'json',
     success: function(jd) {
           jd.backdrops.forEach((element) => {
-              $("#imgMovieSlides").append("<div style=\"display:none\"><img src=\"https://image.tmdb.org/t/p/original/" + element.file_path + "\" alt=\" \"></div>");
+              $(".imagesMovie").append("<div style=\"display:none\"><img src=\"https://image.tmdb.org/t/p/original/" + element.file_path + "\" alt=\" \"></div>");
           });
     }
   });
@@ -78,9 +79,36 @@ $(document).ready(() => {
 
  $.getJSON(urlStart + "3/genre/movie/list?" + apiKey, function(jd){
    jd.genres.forEach(genre => {
-    $(".genre").append("<li><a href=\"#\" id=\""+genre.id+"\">"+genre.name+"</a><ul><li><a href=\"\">Best movie</a></li> <li><a href=\"\">Random movie</a></li></ul></li>");
+    $(".genre").append("<li><a href=\"#\">"+genre.name+"</a><ul class=\"genreID\"><li class=\"bestMovie\"><a href=\"#\">Best movie</a></li> <li class=\"randomMovie\"><a href=\"#\">Random movie</a></li><input type=\"hidden\" value=\""+genre.id+"\"></ul>");
    });
  });
+});
+
+// BEST MOVIE FOR A SPECIFIC GENRE
+$("body").on("click", ".bestMovie a", function(){
+  var genreId = $(this).parent().parent().children('input').last().val();
+  $.getJSON(urlStart + "3/discover/movie?sort_by=vote_average.desc&vote_count.gte=1000&with_genres=" + genreId + "&" + apiKey, function(jd){
+    for (let i=0; i<=jd.results.length-1; i++){
+      console.log(jd.results[i].vote_count);
+      if(parseInt(jd.results[i].vote_count) > 200){
+        getInfoMovie(jd.results[i].id);
+        break;
+      }
+    }
+  });
+});
+
+$("body").on("click",".list_img li a img", function(){
+    getInfoMovie($(this).attr("idmovie"));
+});
+
+// RANDOM MOVIE FOR A SPECIFIC GENRE AFTER 2015
+$("body").on("click", ".randomMovie a", function(){
+  var genreId = $(this).parent().parent().children('input').last().val();
+  $.getJSON(urlStart + "3/discover/movie?primary_release_date.gte=2015&with_genres=" + genreId + "&" + apiKey, function(jd){
+    console.log(jd.results.length);
+    getInfoMovie(jd.results[Math.floor(Math.random() * jd.results.length)].id);
+  });
 });
 
 $( "#searchMovieForm" ).submit(function( event ) {
@@ -96,5 +124,5 @@ $( "#searchMovieForm" ).submit(function( event ) {
 
   /*IMAGES FOR A MOVIE SLIDES*/
   setInterval(function() { 
-    $('#imgMovieSlides > div:first').fadeOut(1000).next().fadeIn(1000).end().appendTo('#imgMovieSlides');
+    $('.imagesMovie > div:first').fadeOut(1000).next().fadeIn(1000).end().appendTo('.imagesMovie');
   },  3000);
