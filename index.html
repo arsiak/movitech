@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"> 
     </head>
     <body>
         <div class="grid">
@@ -28,40 +29,53 @@
         <main class="container">
              <!-- List similar movies -->
              <section class="similarMovies">
+                    <h2>Similar movies</h2>
                     <ul class="list_img">
                             <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" alt=""></a></li>
                     </ul>
             </section>
 
             <!--Description du film-->
-            <section class="movie">
-                <div>
-                    <p><span id="moviePoster"><img src="" alt=""></span></p>
-                    <p>Nom du film:<span id="movieName"></span></p>
-                    <p>Description: <span id="movieDescr"></span> </p>
-                    <p>Budget: <span id="movieBudget"></span> $ </p>
-                    <ul id="movieGenre">
-                        Genres:
-                    </ul>
-                    <p>Date de sortie: <span id="movieReleaseDate"></span></p>
-                    <ul id="movieActors">
-                        Acteurs:
-                        <li></li>
-                    </ul>
-                    <ul id="movieDirectors">
-                            Réalisateurs:
-                            <li></li>
-                        </ul>
-                    <p>Note : <span id="movieRating"></span>/10 </p>
-                    <div id="imgMovieSlides">
+            <section class="movie descrMovie">
+                <div class="imageMovieBox">
+                    <h2 id="movieName"></h2>
+                    <div class="imageMovie"></div>
+                </div>
+                <div class="descrBoxMovie">
+                    <div class="synopsisMovie">
+                        <h2>Synopsis</h2>
+                        <p id="movieDescr"></p>
+                    </div>
+                    <div class="imagesMovieSlides">
+                            <h2>Images</h2>
+                            <div class="imagesMovie"></div>
+                    </div>
+                    <h2>Details</h2>
+                    <div class="leftRightContainer">
+                        <div class="leftDescrBoxMovie">
+                            <p class="elementDescr">Date sortie:  <span id="movieReleaseDate"></span></p>
+                            <p class="elementDescr">Genres: <ul id="movieGenre"></ul></p>
+                        </div>
+                        <div class="rightDescrBoxMovie">
+                            <p>Budget <span id="movieBudget"></span>$</p>
+                            <p>Acteurs <ul id="movieActors">
+                                    Acteurs:
+                                    <li></li>
+                                </ul></p>
+                            <p>    <ul id="movieDirectors">
+                                        Réalisateurs:
+                                        <li></li>
+                                    </ul></p>
+                            <p>Notes: <span id="movieRating"></span>/10</p>
+                        </div>
                     </div>
                 </div>
             </section>
         </main>
 
-        <footer>
-
-        </footer>
+        <footer class="site-footer">
+            <p>Made by Doria Merabet and Arnaud Rosiak with &#9829;</p>
+          </footer>
         </div>
         <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
