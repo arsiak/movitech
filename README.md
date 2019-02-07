@@ -20,3 +20,5 @@ Fonctionnalités
 - Lorsque l'utilisateur recherche un film qui n'existe pas, un message d'erreur apparait
 - L'utilisateur peut visualiser les images du film en diaporama 
 
+![screenshot_page](https://github.com/arsiak/movitech/blob/master/movitech_screenshot.png)
+
