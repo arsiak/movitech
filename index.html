@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>Movitech</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="./CSS/style.css">
         <!-- Add icon library -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet"> 
@@ -14,8 +14,8 @@
                 <div class="search-container">
                         <form id="searchMovieForm" action="">
                                 <input id="searchMovie" type="text" placeholder="Search a movie .." name="search">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                              </form>
+                                <button type="submit" tabindex="0"><i class="fa fa-search"></i></button>
+                        </form>
                 </div>
         </header>
 
@@ -25,13 +25,13 @@
             </ul>
         </nav>
 
-
         <main class="container">
+            <p class="error"></p>
              <!-- List similar movies -->
              <section class="similarMovies">
                     <h2>Similar movies</h2>
                     <ul class="list_img">
-                            <li class="img"><a href="#"><img src="C:\Users\stagiaire\movitech\imgSliderTest\pixpoetry-1320053-unsplash.jpg" alt=""></a></li>
+                            
                     </ul>
             </section>
 
@@ -40,6 +40,7 @@
                 <div class="imageMovieBox">
                     <h2 id="movieName"></h2>
                     <div class="imageMovie"></div>
+                    <div class="tagLine"></div>
                 </div>
                 <div class="descrBoxMovie">
                     <div class="synopsisMovie">
@@ -53,20 +54,15 @@
                     <h2>Details</h2>
                     <div class="leftRightContainer">
                         <div class="leftDescrBoxMovie">
-                            <p class="elementDescr">Date sortie:  <span id="movieReleaseDate"></span></p>
-                            <p class="elementDescr">Genres: <ul id="movieGenre"></ul></p>
+                            <div class="elementDescr"><p>Date sortie:</p>  <span id="movieReleaseDate"></span></div>
+                            <div class="elementDescr"><p>Genres:</p> <ul id="movieGenre"></ul></div>
+                            <div class="elementDescr"><p>Production country:</p> <span id="countryCompany"></span></div>
+                            <div class="elementDescr"><p>Notes:</p> <span id="movieRating"></span>/10</div>
                         </div>
                         <div class="rightDescrBoxMovie">
-                            <p>Budget <span id="movieBudget"></span>$</p>
-                            <p>Acteurs <ul id="movieActors">
-                                    Acteurs:
-                                    <li></li>
-                                </ul></p>
-                            <p>    <ul id="movieDirectors">
-                                        Réalisateurs:
-                                        <li></li>
-                                    </ul></p>
-                            <p>Notes: <span id="movieRating"></span>/10</p>
+                            <div class="elementDescr"><p>Budget:</p> <span id="movieBudget"></span></div>
+                            <div class="elementDescr"><p>Revenue:</p> <span id="revenue"></span></div>
+                            <div class="elementDescr"><p>Production company:</p> <ul id="movieCompany"></ul></div>
                         </div>
                     </div>
                 </div>
@@ -81,6 +77,6 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-        <script src="main.js"></script>
+        <script src="./JS/main.js"></script>
     </body>
 </html>

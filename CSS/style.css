@@ -1,9 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
     background-color:rgb(248, 145, 145);
     font-size: 18px;
     font-family:'Roboto', 'Open Sans', sans-serif;
 }
-
 
 /* Layout global mise en page avec css grid*/
 .grid{
@@ -34,7 +37,6 @@ body {
     background-color: #B93A32;
 }
 
-
 /* MENU VERTICAL */
 
 ul {
@@ -53,12 +55,14 @@ li{
   text-align: center;
   width: 100%;
 }
+
 .genre ul {
   padding:0;
   margin:0;
   list-style:none;
   text-align: center;
 }
+
 .genre li {
    background-color: #111; 
    border-radius: 6px;
@@ -66,6 +70,7 @@ li{
    box-shadow: 3px 3px 3px #999;
    border:solid 1px #333A40
 }
+
 .genre li li {
    max-height:0;
    overflow: hidden;
@@ -76,6 +81,7 @@ li{
    border:none;
    margin:0
 }
+
 .genre a {
   display:block;
   text-decoration: none;
@@ -85,10 +91,10 @@ li{
   font-size:1.2em
 }
 
-
 .genre ul li a, .genre li:hover li a {
   font-size:1em
 }
+
 .genre li:hover {
    background: #111;
    color: red;
@@ -97,13 +103,16 @@ li{
 .genre li:hover a {
   color:white;
 }
+
 .genre li li:hover {
    background: red;
 }
+
 .genre ul li:last-child {
    border-radius: 0 0 6px 6px;
    border:none;
 }
+
 .genre li:hover li {
   max-height: 15em;
 }
@@ -112,93 +121,83 @@ img {
     height: auto;
     max-width: 100%;
 }
-
   
-  h2 {
-    color: #111;
-    font-weight: 600;
-    font-weight: normal;
-    margin: 0;
-    padding: 0.6em 0;
-    text-align: center;
-  }
+h2 {
+  color: #111;
+  font-weight: 600;
+  font-weight: normal;
+  margin: 0;
+  padding: 0.6em 0;
+  text-align: center;
+}
   
-  .controls {
-    padding: 1em;
-    text-align: center;
-  }
+.controls {
+  padding: 1em;
+  text-align: center;
+}
   
-  .controls button {
-    background: #aaa;
-    border: 0;
-    border-radius: 0.25em;
-    color: #eee;
-    padding: 0.5em 1em;
-  }
+.controls button {
+  background: #aaa;
+  border: 0;
+  border-radius: 0.25em;
+  color: #eee;
+  padding: 0.5em 1em;
+}
   
-  .controls button:hover,
-  .controls button:focus {
-    background: orange;
-  }
+.controls button:hover,.controls button:focus {
+  background: orange;
+}
 
-  h1
-  {
-    text-shadow: 0px 0px 7px rgba(141, 23, 23, 0.75);
-    color: #080808;
-    font-weight: 800;
-  }
-
-
+h1{
+  text-shadow: 0px 0px 7px rgba(141, 23, 23, 0.75);
+  color: #080808;
+  font-weight: 800;
+}
 
 /* HEADER */
-
 .main-title {
     text-align: center;
 }
 
-/* */
-* {
-    box-sizing: border-box;
-  }
   
-  /* Style the search field */
-  #searchMovieForm input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
+/* Style the search field */
+#searchMovieForm input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
   
-  /* Style the submit button */
-  #searchMovieForm button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #111;
-    color: red;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-  }
+/* Style the submit button */
+#searchMovieForm button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #111;
+  color: red;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
   
-  #searchMovieForm button:hover {
-    background: #0b7dda;
-  }
+#searchMovieForm button:hover {
+  background: #0b7dda;
+}
 
-  .search-container {
-    grid-column: 3/6;
-    padding: 20px;
-  }
+.search-container {
+  grid-column: 3/6;
+  padding: 20px;
+}
   
-  /* Clear floats */
-  #searchMovieForm::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
+/* Clear floats */
+#searchMovieForm::after {
+  content: "";
+  clear: both;
+  display: table;
+}
 
 /* SLIDE FOR MOVIE IMAGE */
 .imagesMovie { 
@@ -225,7 +224,6 @@ box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
   left: 1px; 
   bottom: 1px;
   right: 1px;
-
 }
 
 .similarMovies{
@@ -238,10 +236,9 @@ box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
   margin: auto;
   min-height: 100px;
   -webkit-box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
--moz-box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
-box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
+  -moz-box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
+  box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
 }
-
 
 /* Mise en page descr*/
 .descrMovie{
@@ -278,23 +275,19 @@ box-shadow: -1px 0px 5px 5px rgb(153, 43, 35);
 }
 
 .descrMovie .descrBoxMovie .leftRightContainer .leftDescrBoxMovie {
-  border-right: 1px solid black;
-  
+  border-right: 1px solid black; 
 }
 
 .descrMovie .descrBoxMovie .leftRightContainer .leftDescrBoxMovie {
   flex-basis: 50%;
-  
 }
 
 .elementDescr {
-  display: flex;
-  width: 80%;
+  padding: 2%;
 }
 
 .elementDescr span {
-  display: flex;
-  margin-left: auto;
+  margin-left: 10%;
 }
 
 footer {
@@ -303,4 +296,25 @@ footer {
   height: 100px;
   color:#B93A32;
   text-align: center;
+}
+
+.tagLine {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.error {
+  text-align: center;
+  font-weight: 700;
+  font-size: 23px;
+}
+
+.elementDescr ul {
+  margin-left: 10%;
+}
+
+.elementDescr p {
+  margin: 0;
+  text-decoration: underline;
+  font-weight: bold;
 }
